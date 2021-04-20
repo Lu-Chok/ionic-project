@@ -1,5 +1,4 @@
-<ion-header>
-
+<ion-header [translucent]="true">
     <ion-toolbar color='primary'>
         <ion-buttons slot="end">
             <ion-menu-button color="dark"></ion-menu-button>
@@ -12,16 +11,15 @@
 
     <ion-toolbar>
         <ion-title>
-            ЛР №1
+            Лабораторна робота №1
         </ion-title>
     </ion-toolbar>
 
     <ion-toolbar>
         <ion-title>
-            Мельник М. КН-31
+            Виконав студент групи КН-31 Мельник Максим
         </ion-title>
     </ion-toolbar>
-
 
 </ion-header>
 
@@ -29,12 +27,12 @@
     <ion-card>
 
         <ion-card-header>
-            <ion-card-title>Кратні 27</ion-card-title>
+            <ion-card-title>Проміжок</ion-card-title>
         </ion-card-header>
         <ion-card-content>
 
             <p class="p_background">
-                Задано три числа. Знайти кількість тих з них, які кратні 27.
+                На заданому проміжку чисел [a,b] знайдіть кількість чисел, які кратні 17, парні і при діленні на 7 дають в остачі 3.
             </p>
 
             <ion-item>
@@ -47,12 +45,7 @@
                 <ion-input type="number" id='b' value='2' #Inputb></ion-input>
             </ion-item>
 
-            <ion-item>
-                <ion-label position="floating">Третє число</ion-label>
-                <ion-input type="number" id='c' value='3' #Inputc></ion-input>
-            </ion-item>
-
-            <ion-button (click)="ras(Inputa.value, Inputb.value, Inputc.value)" expand="block" fill="clear" shape="round">
+            <ion-button (click)="ras(Inputa.value, Inputb.value)" expand="block" fill="clear" shape="round">
                 Розрахунок
             </ion-button>
 

@@ -1,0 +1,62 @@
+<ion-header>
+
+    <ion-toolbar color='primary'>
+        <ion-buttons slot="end">
+            <ion-menu-button color="dark"></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title>
+            Лабораторні роботи
+        </ion-title>
+    </ion-toolbar>
+
+    <ion-toolbar>
+        <ion-title>
+            ЛР №3
+        </ion-title>
+    </ion-toolbar>
+
+    <ion-toolbar>
+        <ion-title>
+            Мельник М. КН-31
+        </ion-title>
+    </ion-toolbar>
+
+    <ion-content [fullscreen]=true class="ion-padding">
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>Читання даних з JSON файлу</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+                Натисніть "Завантажити" для того щоб почати обробку даних.
+            </ion-card-content>
+
+            <ion-button (click)="load()" expand="block" fill="clear">
+                Завантажити
+            </ion-button>
+        </ion-card>
+
+        <ion-list>
+
+            <ion-card button *ngFor='let item of data; index as i' detail (click)="toggleDetails(i)">
+
+                <ion-card-header>
+                    <ion-card-subtitle text-wrap>
+                        <p [ngStyle]="{color: getGreenColor(item.inStock)} ">
+                            {{item.name}} {{item.price}} грн.
+                        </p>
+                    </ion-card-subtitle>
+                </ion-card-header>
+
+                <ion-card-content>
+                    <ion-text *ngIf="showDetails[i] " text-wrap>
+                        <p [ngStyle]="{color: getGreenColor(item.inStock)}">
+                            <span>На складі:</span> {{item.inStock}} {{item.measure}}
+                        </p>
+                    </ion-text>
+                </ion-card-content>
+
+            </ion-card>
+        </ion-list>
+    </ion-content>

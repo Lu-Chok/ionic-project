@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-toolbar color='primary'>
+        <ion-buttons slot="end">
+            <ion-menu-button color="dark"></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title>
+            Лабораторні роботи
+        </ion-title>
+    </ion-toolbar>
+
+    <ion-toolbar>
+        <ion-title>
+            Модуль 1
+        </ion-title>
+    </ion-toolbar>
+
+    <ion-toolbar>
+        <ion-title>
+            Мельник М. КН-31
+        </ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-card>
+
+        <ion-card-header>
+            <ion-card-title>Завдання</ion-card-title>
+            <p>У зоопарку виникла необхідність обліку птахів для побудови нових вольєрів, так для птахів які вміють літати(наприклад, голуби) необхідні вольєри з сіткою площиною 5 на 10 метрів, для птахів які лише плавають(наприклад, пінгвіни) вольєри з
+                озером та землею розміри озера 3 на 3 метри суші 2 на 4 метри, для птахів які бігають(наприклад, страуси) вольєри з високою огорожею розміром 15 на 3 метри. Необхідно спланувати список вольєрів для як мінімум для 3 видів птахів та обрахувати
+                як площину кожного з вольєрів так і сумарну площину. Результати такого планування необхідно виводити на екран.</p>
+        </ion-card-header>
+
+        <ion-card-content>
+            <p id="totalArea"></p>
+            <ion-input type="number" value="1" #Inputn></ion-input>
+            <ion-button (click)="ras(Inputn.value)" expand="block" fill="clear" shape="round"> Розрахунок </ion-button>
+        </ion-card-content>
+
+    </ion-card>
+
+    <ion-list>
+
+        <ion-card *ngFor="let fig of figure">
+
+            <ion-card-header>
+                <ion-card-subtitle text-wrap>
+                    <p [ngStyle]="{color: getColor(fig.pl, max)}">
+                        {{fig.getName()}}
+                    </p>
+                </ion-card-subtitle>
+            </ion-card-header>
+
+            <ion-card-content>
+                <ion-text text-wrap>
+                    <p [ngStyle]="{color: getColor(fig.pl, max)} "> {{fig.getParams()}} </p>
+                </ion-text>
+            </ion-card-content>
+
+        </ion-card>
+    </ion-list>
+</ion-content>

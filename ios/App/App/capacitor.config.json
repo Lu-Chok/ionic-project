@@ -12,6 +12,7 @@
   "cordova": {},
   "server": {
     "cleartext": true,
-    "url": "http://192.168.1.64:8100"
+    "url": "http://192.168.1.64:8100",
+    "originalUrl": "http://192.168.1.64:8100"
   }
 }
