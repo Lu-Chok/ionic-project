@@ -1,0 +1,84 @@
+<!-- <ion-header>
+    <ion-toolbar>
+        <ion-title>database</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    hello
+    <div class="list-group" *ngFor="let good of goods | async">
+        {{ good | json }}
+    </div>
+</ion-content> -->
+
+
+<ion-header>
+
+    <ion-toolbar color='primary'>
+        <ion-buttons slot="end">
+            <ion-menu-button color="dark"></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title>
+            Лабораторні роботи
+        </ion-title>
+    </ion-toolbar>
+
+    <ion-toolbar>
+        <ion-title>
+            ЛР №9
+        </ion-title>
+    </ion-toolbar>
+
+    <ion-toolbar>
+        <ion-title>
+            Мельник М. КН-31
+        </ion-title>
+    </ion-toolbar>
+
+    <ion-content [fullscreen]=true class="ion-padding">
+
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>Дані з Firebase</ion-card-title>
+            </ion-card-header>
+
+
+            <!-- <ion-button (click)="load()" expand="block" fill="clear">
+                Завантажити
+            </ion-button> -->
+        </ion-card>
+        <div class="list-group" *ngFor="let item of goods | async">
+            {{ item | json}}
+        </div>
+
+        <!-- <div class="container">
+            <p>Show all goods</p>
+            <ul>
+                <li *ngFor="let user of goods | async">
+                    {{ user.name | json }}
+                </li>
+            </ul>
+        </div> -->
+
+        <!-- <ion-list>
+
+            <ion-card button *ngFor='let item of goods | async'>
+
+                <ion-card-header>
+                    <ion-card-subtitle text-wrap>
+                        <p>
+                            {{item.payload.name}} {{item.payload.price}} грн.
+                        </p>
+                    </ion-card-subtitle>
+                </ion-card-header>
+
+                <ion-card-content>
+                    <p>
+                        <span>На складі:</span> {{item.inStock}} {{item.measure}}
+                    </p>
+                </ion-card-content>
+
+            </ion-card>
+        </ion-list> -->
+    </ion-content>

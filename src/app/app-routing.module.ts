@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { TabsPageModule } from './tabs/tabs.module';
-import { TabsPage } from './tabs/tabs.page';
+// import { TabsPageModule } from './tabs/tabs.module';
+// import { TabsPage } from './tabs/tabs.page';
 
 // const routes: Routes = [
 //   {
@@ -41,6 +41,26 @@ const routes: Routes = [
   {
     path: 'module-one',
     loadChildren: () => import('./module-one/module-one.module').then( m => m.ModuleOnePageModule)
+  },
+  {
+    path: 'interfaces',
+    loadChildren: () => import('./interfaces/interfaces.module').then( m => m.InterfacesPageModule)
+  },
+  {
+    path: 'database',
+    loadChildren: () => import('./database/database.module').then( m => m.DatabasePageModule)
+  },
+  {
+    path: 'test',
+    loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
+  },
+  {
+    path: 'exam',
+    loadChildren: () => import('./exam/exam.module').then( m => m.ExamPageModule)
+  },
+  {
+    path: 'exam',
+    loadChildren: () => import('./exam/exam.module').then( m => m.ExamPageModule)
   }
  ];
  
@@ -64,9 +84,12 @@ const routes: Routes = [
 //   },
 // ];
 
+// import { HotToastModule } from '@ngneat/hot-toast';
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    // ,HotToastModule.forRoot()
   ],
   exports: [RouterModule]
 })

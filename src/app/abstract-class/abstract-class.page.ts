@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 
-abstract class Figure2D {
+export abstract class Figure2D {
   name: string;
   a: number;
   b: number;
@@ -22,7 +22,8 @@ abstract class Figure2D {
   abstract S () : void;
 }
 
-class EqualTriangle extends Figure2D {
+
+export class EqualTriangle extends Figure2D {
 
   constructor( 
     public name: string, 
@@ -39,7 +40,7 @@ class EqualTriangle extends Figure2D {
   }
 }
 
-class SquareTriangle extends Figure2D {
+export class SquareTriangle extends Figure2D {
 
   constructor( 
     public name: string, 

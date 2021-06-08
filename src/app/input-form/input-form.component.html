@@ -1,0 +1,6 @@
+<form [formGroup]="form">
+    <div *ngFor="let row of form.controls;let i=index">
+        <input type="number" *ngFor="let col of row.controls" [formControl]="col">
+    </div>
+</form>
+<p>{{form.value}}</p>
